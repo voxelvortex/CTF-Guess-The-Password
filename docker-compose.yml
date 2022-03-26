@@ -13,11 +13,11 @@ services:
   ftp_vuln:
     container_name: Guess_The_Password_FTP
     build:
-      context: ./docker-alpine-ftp-server
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: FTPDockerfile
     ports:
-      - 20:20
-      - 21:21
+      - 0.0.0.0:21:21
+      - 0.0.0.0:20:20
 
     restart: always
   
