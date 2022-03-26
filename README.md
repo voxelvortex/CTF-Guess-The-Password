@@ -4,13 +4,21 @@ This challenge aims at pushing you to use ncat. You should be able to find the v
 
 ------
 
+# How to deploy
+
+The way I chose to write this CTF challenge means there is a slight wrinkle in the initial setup of the challenge, but it isn't terrible.
+
+In order for the solution example to work properly
+
+------
+
 ## CTF Challenge info:
 
 ### Name: 
 Password Guess?
 
 ### Description: 
-We found a VP's box, but when we try to brute force his short password, we get rate limited! Can you find a way around the rate limiting to get the password?
+We found a VIP's box, but when we try to guess his short password, we get rate limited! Can you find a way around the rate limiting to get the password?
 
 <ip and main service port information>
 
