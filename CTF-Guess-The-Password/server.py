@@ -71,7 +71,7 @@ class Server:
 
         if len(user_input) == 6 and self.encoder.check_input(user_input):
             secret = self.encoder.flag_from_pwd(user_input)
-            response = f"RITSEC{{secret}}\n"
+            response = f"RITSEC{ {secret} }\n"
 
         else:
             response = "That password isn't right!\n\tHint: Your password might be a date in the format YYMMDD\n"
