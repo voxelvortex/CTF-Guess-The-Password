@@ -11,3 +11,10 @@ Password Guess?
 
 ### Description: 
 We found a VP's box, but when we try to brute force his short password, we get rate limited! Can you find a way around the rate limiting to get the password?
+
+<ip and main service port information>
+
+### Hints:
+1. Is there anything open other than the main service?
+
+2. 

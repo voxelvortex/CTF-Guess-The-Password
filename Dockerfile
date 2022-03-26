@@ -5,9 +5,10 @@ ADD ./CTF-Guess-The-Password /CTF
 WORKDIR /CTF
 
 # update and install needed stuff
-RUN apt update -y && apt upgrade -y && apt install vsftpd -y && apt install git -y && apt install systemctl -y
-RUN apt install python3-full -y && apt install python3-pip -y
-#RUN python3 -m pip install-U pip && python3 -m pip install hashlib
+RUN apt-get update -y &&\
+    #apt-get upgrade -y &&\ # You can comment this out for a faster build if you need to
+    apt-get install -y vsftpd git systemctl python3-full python3-pip python3-wheel
+# RUN python3 -m pip install -U pip hashlib
 
 # setup ftp vuln
 RUN systemctl enable vsftpd && systemctl start vsftpd
@@ -19,6 +20,6 @@ RUN systemctl enable vsftpd && systemctl start vsftpd
 CMD python3 ./server.py
 
 # Expose necessary ports
-EXPOSE 20/tcp
-EXPOSE 21/tcp
-EXPOSE 9009/tcp
+#EXPOSE 20/tcp
+#EXPOSE 21/tcp
+#EXPOSE 9009/tcp
