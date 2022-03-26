@@ -9,7 +9,7 @@ def main():
     for i in range(1000000):
         possible_answer = str(i)
 
-        while(len(possible_answer) < 4):
+        while(len(possible_answer) < 6):
             possible_answer = "0" + possible_answer
         possible_answers.add(possible_answer)
 
@@ -20,8 +20,9 @@ def main():
 
     for possible_answer in possible_answers:
         if encoder.check_input(possible_answer):
-            print("The password is probably: {0}".format(possible_answer))
-            print("That means the flag is RITSEC[{0}]".format(encoder.flag_from_pwd(possible_answer) ) )
+            print(f"The password is probably: {possible_answer}")
+            flag = encoder.flag_from_pwd(possible_answer)
+            print(f"That means the flag is <RITSEC{ {flag} }>")
 
     print("Done with checks!")
 
