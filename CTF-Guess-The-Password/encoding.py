@@ -29,12 +29,6 @@ class Encoder():
 
 
 
-def main():
-    enc = Encoder("supersecret.json")
-    print(enc.check_input("220120"))
-    print(enc.flag_from_pwd("220120"))
-
-
 
 if __name__ == "__main__":
     main()
