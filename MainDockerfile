@@ -1,7 +1,7 @@
 FROM debian:latest
 
-# import CTF-Guess-ThePassword
-ADD ./CTF-Guess-The-Password /CTF
+# import CTF files
+ADD ./Deploy /CTF
 WORKDIR /CTF
 
 # update and install needed stuff
