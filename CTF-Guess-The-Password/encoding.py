@@ -28,7 +28,5 @@ class Encoder():
         return hashed_user_input == self.hashed_key
 
 
-
-
 if __name__ == "__main__":
     main()
