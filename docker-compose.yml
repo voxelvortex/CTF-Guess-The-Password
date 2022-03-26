@@ -1,13 +1,23 @@
 version: '3'
 
 services:
-  server:
-    container_name: Guess_The_Password
+  main_service:
+    container_name: Guess_The_Password_Main
     build:
       context: .
+      dockerfile: MainDockerfile
+    ports:
+      - 9009:9009
+    restart: always
+
+  ftp_vuln:
+    container_name: Guess_The_Password_FTP
+    build:
+      context: ./docker-alpine-ftp-server
       dockerfile: Dockerfile
     ports:
       - 20:20
       - 21:21
-      - 9009:9009
-      
+
+    restart: always
+  
