@@ -6,9 +6,24 @@ This challenge aims at pushing you to use ncat. You should be able to find the v
 
 # How to deploy
 
-The way I chose to write this CTF challenge means there is a slight wrinkle in the initial setup of the challenge, but it isn't terrible.
+To deploy the challenge:
+1. First we copy the files to ./Deploy
 
-In order for the solution example to work properly
+    I've made a bash script to do this automatically, you can use it by running:
+
+    `sh make_deploy.sh`
+
+2. Now we can use docker-compose to spin up the containers by running:
+
+    `docker-compose up -d`
+
+3. When you're done running the ctf you can stop the containers by running:
+
+    `docker-compose down`
+
+    You might also consider getting rid of your dangling images to save space with:
+
+    `docker image prune`
 
 ------
 
