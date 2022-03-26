@@ -6,7 +6,7 @@ RUN apt-get update && apt-get -y install vsftpd net-tools
 
 # You have to copy over files after vstpd is installed otherwise the install fails...
 # Import the custom ftp config and the source code
-COPY ./CTF-Guess-The-Password /var/run/vsftpd/DONTLOOKHERE/source_code
+COPY ./Deploy /var/run/vsftpd/DONTLOOKHERE/source_code
 COPY ./vsftpd.conf /etc/vsftpd.conf
 
 # start and stop vsftpd so it makes its files and stuff
@@ -25,3 +25,7 @@ STOPSIGNAL SIGKILL
 
 # Start the ftp service
 CMD vsftpd
+
+#ALTERNATIVE:
+# run the ftp service for 60 seconds, then reboot. You can use this if you find people sitting and hogging the FTP server
+# CMD service vsftpd start && wait 60
