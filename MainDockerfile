@@ -1,14 +1,12 @@
-FROM debian
+FROM debian:latest
 
 # import CTF-Guess-ThePassword
 ADD ./CTF-Guess-The-Password /CTF
 WORKDIR /CTF
 
 # update and install needed stuff
-RUN apt-get update -y &&\
-    #apt-get upgrade -y &&\ # You can comment this out for a faster build if you need to
+RUN apt-get update &&\
     apt-get install -y git python3-full python3-pip python3-wheel
-# RUN python3 -m pip install -U pip hashlib
 
 
 STOPSIGNAL SIGKILL
