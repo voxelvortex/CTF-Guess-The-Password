@@ -1,0 +1,27 @@
+FROM debian:latest
+
+# Install ftp daemon
+RUN apt-get update && apt-get -y install vsftpd net-tools
+
+
+# You have to copy over files after vstpd is installed otherwise the install fails...
+# Import the custom ftp config and the source code
+COPY ./CTF-Guess-The-Password /var/run/vsftpd/DONTLOOKHERE/source_code
+COPY ./vsftpd.conf /etc/vsftpd.conf
+
+# start and stop vsftpd so it makes its files and stuff
+RUN service vsftpd start && service vsftpd stop
+
+# remove write access to this folder so it acts like a jail
+RUN chmod -R 555 /var/run/vsftpd/empty
+RUN usermod -d /var/run/vsftpd/ ftp
+
+
+# Expose required ports
+EXPOSE 20/tcp
+EXPOSE 21/tcp
+
+STOPSIGNAL SIGKILL
+
+# Start the ftp service
+CMD vsftpd
