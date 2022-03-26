@@ -14,7 +14,5 @@ We found a VP's box, but when we try to brute force his short password, we get r
 
 <ip and main service port information>
 
-### Hints:
-1. Is there anything open other than the main service?
-
-2. 
+### Hint:
+Is there anything open other than the main service?
